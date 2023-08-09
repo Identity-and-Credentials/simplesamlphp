@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\{RedirectResponse, Request, Response};
 
 use function array_keys;
 use function implode;
+use function urldecode;
 use function urlencode;
 
 /**
@@ -21,6 +22,9 @@ use function urlencode;
  */
 class Exception
 {
+    public const CODES = ['IDENTIFICATION_FAILURE', 'AUTHENTICATION_FAILURE', 'AUTHORIZATION_FAILURE', 'OTHER_ERROR'];
+
+
     /**
      * Controller constructor.
      *
@@ -35,6 +39,48 @@ class Exception
         protected Configuration $config,
         protected Session $session
     ) {
+    }
+
+
+    /**
+     * Show cardinality error.
+     *
+     * @param Request $request The request that lead to this login operation.
+     * @param string $code The error code
+     * @throws \SimpleSAML\Error\BadRequest
+     * @return \SimpleSAML\XHTML\Template  An HTML template
+     */
+    public function error(Request $request, string $code): Response
+    {
+        Assert::oneOf($code, self::CODES);
+        $ts = $rp = $tid = $ctx = null;
+
+        if ($request->query->has('ts')) {
+            $ts = $request->query->get('ts');
+            Assert::integerish($ts);
+        }
+
+        if ($request->query->has('rp')) {
+            $rp = urldecode($request->query->get('rp'));
+        }
+
+        if ($request->query->has('tid')) {
+            $tid = urldecode($request->query->get('tid'));
+        }
+
+        if ($request->query->has('ctx')) {
+            $ctx = urldecode($request->query->get('ctx'));
+        }
+
+        $t = new Template($this->config, 'core:error.twig');
+
+        $t->data['code'] = $code;
+        $t->data['ts'] = $ts;
+        $t->data['rp'] = $rp;
+        $t->data['tid'] => $tid;
+        $t->data['ctx'] => $ctx;
+
+        $t->show();
     }
 
 
