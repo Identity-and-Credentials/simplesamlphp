@@ -77,8 +77,8 @@ class Exception
         $t->data['code'] = $code;
         $t->data['ts'] = $ts;
         $t->data['rp'] = $rp;
-        $t->data['tid'] => $tid;
-        $t->data['ctx'] => $ctx;
+        $t->data['tid'] = $tid;
+        $t->data['ctx'] = $ctx;
 
         $t->show();
     }
