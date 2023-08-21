@@ -9,7 +9,7 @@
     "PHP_STRIP": true,
     "PHP_VM": "php",
     "STACK": "cflinuxfs4",
-    "WEBDIR": "www",
+    "WEBDIR": "public",
     "WEB_SERVER": "httpd",
     "ZEND_EXTENSIONS": []
 }
