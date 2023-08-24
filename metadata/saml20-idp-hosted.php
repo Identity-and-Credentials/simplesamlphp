@@ -6,7 +6,7 @@
  * See: https://simplesamlphp.org/docs/stable/simplesamlphp-reference-idp-hosted
  */
 
-$metadata['urn:x-simplesamlphp:example-idp'] = [
+$metadata['http://uaa-acceptance.cf-app.com/saml-idp'] = [
     /*
      * The hostname of the server (VHOST) that will use this SAML entity.
      *
