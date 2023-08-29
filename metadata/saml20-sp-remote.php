@@ -55,6 +55,7 @@ qK7UFgP1bRl5qksrYX5S0z2iGJh0GvonLUt3e20Ssfl5tTEDDnAEUMLfBkyaxEHD
 RZ/nbTJ7VTeZOSyRoVn5XHhpuJ0B',
     'assertion.encryption' => FALSE,
     'nameid.encryption' => FALSE,
+    'validate.authnrequest' => FALSE,
 );
 
 $metadata['login.10.244.0.34.xip.io'] = array(
