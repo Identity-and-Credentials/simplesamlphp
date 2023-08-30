@@ -641,7 +641,7 @@ $config = [
      * Example:
      *  'session.cookie.samesite' => 'None',
      */
-    'session.cookie.samesite' => $httpUtils->canSetSameSiteNone() ? 'None' : null,
+//    'session.cookie.samesite' => $httpUtils->canSetSameSiteNone() ? 'None' : null,
 
     /*
      * Options to override the default settings for php sessions.
