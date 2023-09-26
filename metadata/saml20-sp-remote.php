@@ -38,9 +38,15 @@ $metadata['cloudfoundry-saml-login'] = array(
     'AssertionConsumerService' => 'http://localhost:8080/uaa/saml/SSO/alias/cloudfoundry-saml-login',
     'SingleLogoutService' => 'http://localhost:8080/uaa/saml/SingleLogout/alias/cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
-    'simplesaml.nameidattribute' => 'uid',
     'validate.authnrequest' => FALSE,
     'validate.logout' => FALSE,
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'uid',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['login.10.244.0.34.xip.io'] = array(
