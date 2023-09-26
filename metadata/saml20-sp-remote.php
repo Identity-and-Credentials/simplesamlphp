@@ -53,42 +53,78 @@ $metadata['login.10.244.0.34.xip.io'] = array(
     'AssertionConsumerService' => 'http://login.10.244.0.34.xip.io/saml/SSO/alias/login.10.244.0.34.xip.io',
     'SingleLogoutService' => 'http://login.10.244.0.34.xip.io/saml/SSO/alias/login.10.244.0.34.xip.io',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['login.identity.cf-app.com'] = array(
     'AssertionConsumerService' => 'https://login.identity.cf-app.com/saml/SSO/alias/login.identity.cf-app.com',
     'SingleLogoutService' => 'https://login.identity.cf-app.com/saml/SingleLogout/alias/login.identity.cf-app.com',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['http://52.1.233.136:8080'] = array(
     'AssertionConsumerService' => 'http://52.1.233.136:8080/saml/SSO/alias/52.1.233.136',
     'SingleLogoutService' => 'http://52.1.233.136:8080/saml/SSO/alias/52.1.233.136',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['uaa-bosh'] = array(
     'AssertionConsumerService' => 'https://uaa.uaa-bosh.cf-app.com:8443/saml/SSO/alias/uaa-bosh',
     'SingleLogoutService' => 'https://uaa.uaa-bosh.cf-app.com:8443/saml/SSO/alias/uaa-bosh',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['testzone1.login.10.244.0.34.xip.io'] = array(
     'AssertionConsumerService' => 'http://testzone1.login.10.244.0.34.xip.io/saml/SSO/alias/testzone1.login.10.244.0.34.xip.io',
     'SingleLogoutService' => 'http://testzone1.login.10.244.0.34.xip.io/saml/SSO/alias/testzone1.login.10.244.0.34.xip.io',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['testzone1.cloudfoundry-saml-login'] = array(
     'AssertionConsumerService' => 'http://testzone1.localhost:8080/uaa/saml/SSO/alias/testzone1.cloudfoundry-saml-login',
     'SingleLogoutService' => 'http://testzone1.localhost:8080/uaa/saml/SSO/alias/testzone1.cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
     'validate.authnrequest' => FALSE,
 );
 
@@ -96,7 +132,13 @@ $metadata['testzone2.cloudfoundry-saml-login'] = array(
     'AssertionConsumerService' => 'http://testzone2.localhost:8080/uaa/saml/SSO/alias/testzone2.cloudfoundry-saml-login',
     'SingleLogoutService' => 'http://testzone2.localhost:8080/uaa/saml/SingleLogout/alias/testzone2.cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
     'validate.authnrequest' => FALSE,
 );
 
@@ -104,7 +146,13 @@ $metadata['testzone3.cloudfoundry-saml-login'] = array(
     'AssertionConsumerService' => 'http://testzone3.localhost:8080/uaa/saml/SSO/alias/invalid',
     'SingleLogoutService' => 'http://testzone3.localhost:8080/uaa/saml/SSO/alias/invalid',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
     'validate.authnrequest' => FALSE,
 );
 
@@ -112,7 +160,13 @@ $metadata['testzone4.cloudfoundry-saml-login'] = array(
     'AssertionConsumerService' => 'http://testzone4.localhost:8080/uaa/saml/SSO/alias/testzone4.cloudfoundry-saml-login',
     'SingleLogoutService' => 'http://testzone4.localhost:8080/uaa/saml/SSO/alias/testzone4.cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
-    'simplesaml.nameidattribute' => 'uid',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'uid',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
     'validate.authnrequest' => FALSE,
 );
 
@@ -120,7 +174,13 @@ $metadata['oidcloginit.cloudfoundry-saml-login'] = array(
     'AssertionConsumerService' => 'http://oidcloginit.localhost:8080/uaa/saml/SSO/alias/oidcloginit.cloudfoundry-saml-login',
     'SingleLogoutService' => 'http://oidcloginit.localhost:8080/uaa/saml/SSO/alias/oidcloginit.cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
-    'simplesaml.nameidattribute' => 'uid',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'uid',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 
@@ -128,21 +188,39 @@ $metadata['https://oidc10.uaa-acceptance.cf-app.com'] = array(
     'AssertionConsumerService' => 'https://oidc10.uaa-acceptance.cf-app.com/saml/SSO/alias/oidc10.uaa-acceptance.cf-app.com',
     'SingleLogoutService' => 'https://oidc10.uaa-acceptance.cf-app.com/saml/SSO/alias/oidc10.uaa-acceptance.cf-app.com',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['login.uaa-acceptance-74.cf-app.com'] = array(
     'AssertionConsumerService' => 'https://login.uaa-acceptance-74.cf-app.com/saml/SSO/alias/login.uaa-acceptance-74.cf-app.com',
     'SingleLogoutService' => 'https://login.uaa-acceptance-74.cf-app.com/saml/SSO/alias/login.uaa-acceptance-74.cf-app.com',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
 );
 
 $metadata['spring.security.saml.sp.id'] = array(
     'AssertionConsumerService' => 'http://localhost:8080/sample-sp/saml/sp/SSO/alias/boot-sample-sp',
     'SingleLogoutService' => 'http://localhost:8080/sample-sp/saml/sp/logout/alias/boot-sample-sp',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
     'certData' => 'MIICgTCCAeoCCQCuVzyqFgMSyDANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 VVMxEzARBgNVBAgMCldhc2hpbmd0b24xEjAQBgNVBAcMCVZhbmNvdXZlcjEdMBsG
 A1UECgwUU3ByaW5nIFNlY3VyaXR5IFNBTUwxCzAJBgNVBAsMAnNwMSAwHgYDVQQD
@@ -165,7 +243,13 @@ $metadata['http://localhost:8080/sample-sp'] = array(
     'AssertionConsumerService' => 'http://localhost:8080/sample-sp/saml2/SSO/alias/localhost',
     'SingleLogoutService' => 'http://localhost:8080/sample-sp/saml/sp/logout/alias/localhost',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
     'certData' => 'MIICgTCCAeoCCQCuVzyqFgMSyDANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 VVMxEzARBgNVBAgMCldhc2hpbmd0b24xEjAQBgNVBAcMCVZhbmNvdXZlcjEdMBsG
 A1UECgwUU3ByaW5nIFNlY3VyaXR5IFNBTUwxCzAJBgNVBAsMAnNwMSAwHgYDVQQD
@@ -188,7 +272,13 @@ $metadata['http://localhost:8080/saml2/service-provider-metadata/simplesamlphp']
     'AssertionConsumerService' => 'http://localhost:8080/login/saml2/sso/simplesamlphp',
     'SingleLogoutService' => 'http://localhost:8080/saml2/logout/simplesamlphp',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'simplesaml.nameidattribute' => 'emailAddress',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'emailAddress',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
+          ],
+        ],
     'certData' => 'MIICgTCCAeoCCQCuVzyqFgMSyDANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 VVMxEzARBgNVBAgMCldhc2hpbmd0b24xEjAQBgNVBAcMCVZhbmNvdXZlcjEdMBsG
 A1UECgwUU3ByaW5nIFNlY3VyaXR5IFNBTUwxCzAJBgNVBAsMAnNwMSAwHgYDVQQD
@@ -215,7 +305,13 @@ $metadata['http://localhost:8080/saml2/service-provider-metadata/simplesamlphp2'
     'AssertionConsumerService' => 'http://localhost:8080/login/saml2/sso/simplesamlphp2',
     'SingleLogoutService' => 'http://localhost:8080/saml2/logout/simplesamlphp2',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
-    'simplesaml.nameidattribute' => 'eduPersonPrincipalName',
+    'authproc' => [
+          1 => [
+            'class' => 'saml:AttributeNameID',
+            'identifyingAttribute' => 'eduPersonPrincipalName',
+            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
+          ],
+        ],
     'certData' => 'MIICgTCCAeoCCQCuVzyqFgMSyDANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 VVMxEzARBgNVBAgMCldhc2hpbmd0b24xEjAQBgNVBAcMCVZhbmNvdXZlcjEdMBsG
 A1UECgwUU3ByaW5nIFNlY3VyaXR5IFNBTUwxCzAJBgNVBAsMAnNwMSAwHgYDVQQD
