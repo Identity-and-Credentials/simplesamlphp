@@ -40,6 +40,7 @@ $metadata['cloudfoundry-saml-login'] = array(
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
     'simplesaml.nameidattribute' => 'uid',
     'validate.authnrequest' => FALSE,
+    'validate.logout' => FALSE,
 );
 
 $metadata['login.10.244.0.34.xip.io'] = array(
