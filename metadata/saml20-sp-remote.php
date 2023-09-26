@@ -126,6 +126,7 @@ $metadata['testzone1.cloudfoundry-saml-login'] = array(
           ],
         ],
     'validate.authnrequest' => FALSE,
+    'validate.logout' => FALSE,
 );
 
 $metadata['testzone2.cloudfoundry-saml-login'] = array(
@@ -140,6 +141,7 @@ $metadata['testzone2.cloudfoundry-saml-login'] = array(
           ],
         ],
     'validate.authnrequest' => FALSE,
+    'validate.logout' => FALSE,
 );
 
 $metadata['testzone3.cloudfoundry-saml-login'] = array(
@@ -154,6 +156,7 @@ $metadata['testzone3.cloudfoundry-saml-login'] = array(
           ],
         ],
     'validate.authnrequest' => FALSE,
+    'validate.logout' => FALSE,
 );
 
 $metadata['testzone4.cloudfoundry-saml-login'] = array(
@@ -168,6 +171,7 @@ $metadata['testzone4.cloudfoundry-saml-login'] = array(
           ],
         ],
     'validate.authnrequest' => FALSE,
+    'validate.logout' => FALSE,
 );
 
 $metadata['oidcloginit.cloudfoundry-saml-login'] = array(
