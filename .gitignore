@@ -1,5 +1,3 @@
-cert/*
-!/cert/*.gitkeep
 !/public/assets/.gitkeep
 /public/assets/*
 .phpunit.result.cache
