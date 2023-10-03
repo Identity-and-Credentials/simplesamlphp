@@ -38,9 +38,9 @@ $metadata['cloudfoundry-saml-login'] = array(
     'AssertionConsumerService' => 'http://localhost:8080/uaa/saml/SSO/alias/cloudfoundry-saml-login',
     'SingleLogoutService' => 'http://localhost:8080/uaa/saml/SingleLogout/alias/cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
-    'validate.authnrequest' => FALSE,
-    'validate.logout' => FALSE,
-    'authproc' => [
+    'validate.authnrequest' => FALSE, // turn off signature validation for authn requests from UAA, because this validation requires this SAML server to obtain the "signing cert" from UAA's metadata URL (which is served under localhost during test runs, and hence inaccessible to this SAML server).
+    'validate.logout' => FALSE, // same as "validate.authnrequest" but for logout requests from UAA
+    'authproc' => [ // this filter tells SAML server to use the SAML user's uid as their NameID in the SAML assertion
           1 => [
             'class' => 'saml:AttributeNameID',
             'identifyingAttribute' => 'uid',
@@ -54,14 +54,14 @@ $metadata['testzone1.cloudfoundry-saml-login'] = array(
     'SingleLogoutService' => 'http://testzone1.localhost:8080/uaa/saml/SSO/alias/testzone1.cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
     'authproc' => [
-          1 => [
+          1 => [ // this filter tells SAML server to use the SAML user's emailAddress as their NameID in the SAML assertion
             'class' => 'saml:AttributeNameID',
             'identifyingAttribute' => 'emailAddress',
             'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
           ],
         ],
-    'validate.authnrequest' => FALSE,
-    'validate.logout' => FALSE,
+    'validate.authnrequest' => FALSE, // turn off signature validation for authn requests from UAA, because this validation requires this SAML server to obtain the "signing cert" from UAA's metadata URL (which is served under localhost during test runs, and hence inaccessible to this SAML server).
+    'validate.logout' => FALSE, // same as "validate.authnrequest" but for logout requests from UAA
 );
 
 $metadata['testzone2.cloudfoundry-saml-login'] = array(
@@ -69,14 +69,14 @@ $metadata['testzone2.cloudfoundry-saml-login'] = array(
     'SingleLogoutService' => 'http://testzone2.localhost:8080/uaa/saml/SingleLogout/alias/testzone2.cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
     'authproc' => [
-          1 => [
+          1 => [ // this filter tells SAML server to use the SAML user's emailAddress as their NameID in the SAML assertion
             'class' => 'saml:AttributeNameID',
             'identifyingAttribute' => 'emailAddress',
             'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
           ],
         ],
-    'validate.authnrequest' => FALSE,
-    'validate.logout' => FALSE,
+    'validate.authnrequest' => FALSE, // turn off signature validation for authn requests from UAA, because this validation requires this SAML server to obtain the "signing cert" from UAA's metadata URL (which is served under localhost during test runs, and hence inaccessible to this SAML server).
+    'validate.logout' => FALSE, // same as "validate.authnrequest" but for logout requests from UAA
 );
 
 $metadata['testzone3.cloudfoundry-saml-login'] = array(
@@ -84,14 +84,14 @@ $metadata['testzone3.cloudfoundry-saml-login'] = array(
     'SingleLogoutService' => 'http://testzone3.localhost:8080/uaa/saml/SSO/alias/invalid',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
     'authproc' => [
-          1 => [
+          1 => [ // this filter tells SAML server to use the SAML user's emailAddress as their NameID in the SAML assertion
             'class' => 'saml:AttributeNameID',
             'identifyingAttribute' => 'emailAddress',
             'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
           ],
         ],
-    'validate.authnrequest' => FALSE,
-    'validate.logout' => FALSE,
+    'validate.authnrequest' => FALSE, // turn off signature validation for authn requests from UAA, because this validation requires this SAML server to obtain the "signing cert" from UAA's metadata URL (which is served under localhost during test runs, and hence inaccessible to this SAML server).
+    'validate.logout' => FALSE, // same as "validate.authnrequest" but for logout requests from UAA
 );
 
 $metadata['testzone4.cloudfoundry-saml-login'] = array(
@@ -99,12 +99,12 @@ $metadata['testzone4.cloudfoundry-saml-login'] = array(
     'SingleLogoutService' => 'http://testzone4.localhost:8080/uaa/saml/SSO/alias/testzone4.cloudfoundry-saml-login',
     'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
     'authproc' => [
-          1 => [
+          1 => [ // this filter tells SAML server to use the SAML user's uid as their NameID in the SAML assertion
             'class' => 'saml:AttributeNameID',
             'identifyingAttribute' => 'uid',
             'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
           ],
         ],
-    'validate.authnrequest' => FALSE,
-    'validate.logout' => FALSE,
+    'validate.authnrequest' => FALSE, // turn off signature validation for authn requests from UAA, because this validation requires this SAML server to obtain the "signing cert" from UAA's metadata URL (which is served under localhost during test runs, and hence inaccessible to this SAML server).
+    'validate.logout' => FALSE, // same as "validate.authnrequest" but for logout requests from UAA
 );
