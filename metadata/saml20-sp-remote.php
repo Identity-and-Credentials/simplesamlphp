@@ -109,33 +109,6 @@ $metadata['testzone4.cloudfoundry-saml-login'] = array(
     'validate.logout' => FALSE,
 );
 
-$metadata['oidcloginit.cloudfoundry-saml-login'] = array(
-    'AssertionConsumerService' => 'http://oidcloginit.localhost:8080/uaa/saml/SSO/alias/oidcloginit.cloudfoundry-saml-login',
-    'SingleLogoutService' => 'http://oidcloginit.localhost:8080/uaa/saml/SSO/alias/oidcloginit.cloudfoundry-saml-login',
-    'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
-    'authproc' => [
-          1 => [
-            'class' => 'saml:AttributeNameID',
-            'identifyingAttribute' => 'uid',
-            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-          ],
-        ],
-);
-
-
-$metadata['https://oidc10.uaa-acceptance.cf-app.com'] = array(
-    'AssertionConsumerService' => 'https://oidc10.uaa-acceptance.cf-app.com/saml/SSO/alias/oidc10.uaa-acceptance.cf-app.com',
-    'SingleLogoutService' => 'https://oidc10.uaa-acceptance.cf-app.com/saml/SSO/alias/oidc10.uaa-acceptance.cf-app.com',
-    'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'authproc' => [
-          1 => [
-            'class' => 'saml:AttributeNameID',
-            'identifyingAttribute' => 'emailAddress',
-            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-          ],
-        ],
-);
-
 $metadata['login.uaa-acceptance-74.cf-app.com'] = array(
     'AssertionConsumerService' => 'https://login.uaa-acceptance-74.cf-app.com/saml/SSO/alias/login.uaa-acceptance-74.cf-app.com',
     'SingleLogoutService' => 'https://login.uaa-acceptance-74.cf-app.com/saml/SSO/alias/login.uaa-acceptance-74.cf-app.com',
