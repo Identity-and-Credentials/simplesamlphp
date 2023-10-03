@@ -108,16 +108,3 @@ $metadata['testzone4.cloudfoundry-saml-login'] = array(
     'validate.authnrequest' => FALSE,
     'validate.logout' => FALSE,
 );
-
-$metadata['login.uaa-acceptance-74.cf-app.com'] = array(
-    'AssertionConsumerService' => 'https://login.uaa-acceptance-74.cf-app.com/saml/SSO/alias/login.uaa-acceptance-74.cf-app.com',
-    'SingleLogoutService' => 'https://login.uaa-acceptance-74.cf-app.com/saml/SSO/alias/login.uaa-acceptance-74.cf-app.com',
-    'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-    'authproc' => [
-          1 => [
-            'class' => 'saml:AttributeNameID',
-            'identifyingAttribute' => 'emailAddress',
-            'Format' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
-          ],
-        ],
-);
