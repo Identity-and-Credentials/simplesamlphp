@@ -1,0 +1,15 @@
+{
+    "ADMIN_EMAIL": "admin@localhost",
+    "HTTPD_MODULES_STRIP": true,
+    "HTTPD_STRIP": true,
+    "LIBDIR": "libx",
+    "NGINX_STRIP": true,
+    "PHP_MODULES": [],
+    "PHP_MODULES_STRIP": true,
+    "PHP_STRIP": true,
+    "PHP_VM": "php",
+    "STACK": "cflinuxfs4",
+    "WEBDIR": "public",
+    "WEB_SERVER": "httpd",
+    "ZEND_EXTENSIONS": []
+}
